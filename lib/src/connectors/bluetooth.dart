@@ -26,7 +26,7 @@ class BluetoothPrinterDevice {
 }
 
 class BluetoothPrinterConnector implements PrinterConnector<BluetoothPrinterInput> {
-  // ignore: unused_element
+  // ignore: unused_element, unused_element_parameter
   BluetoothPrinterConnector._({this.address = "", this.isBle = false}) {
     if (Platform.isAndroid)
       flutterPrinterChannel.setMethodCallHandler((MethodCall call) {

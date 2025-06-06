@@ -253,9 +253,9 @@ class _MyAppState extends State<MyApp> {
         bytes += generator.feed(2);
         bytes += generator.cut();
         connectedTCP = await printerManager.connect(type: bluetoothPrinter.typePrinter, model: TcpPrinterInput(ipAddress: bluetoothPrinter.address!));
+        // ignore: avoid_print
         if (!connectedTCP) print(' --- please review your connection ---');
         break;
-      default:
     }
     if (bluetoothPrinter.typePrinter == PrinterType.bluetooth && Platform.isAndroid) {
       if (_currentStatus == BTStatus.connected) {
@@ -291,7 +291,6 @@ class _MyAppState extends State<MyApp> {
         await printerManager.connect(type: selectedPrinter!.typePrinter, model: TcpPrinterInput(ipAddress: selectedPrinter!.address!));
         _isConnected = true;
         break;
-      default:
     }
 
     setState(() {});
